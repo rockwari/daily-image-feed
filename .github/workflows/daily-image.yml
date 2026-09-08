@@ -40,9 +40,6 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FORCE: ${{ github.event.inputs.force || 'false' }}
-          RESEARCH_MODEL: ${{ vars.RESEARCH_MODEL }}
-          RESEARCH_MAX_OUTPUT_TOKENS: ${{ vars.RESEARCH_MAX_OUTPUT_TOKENS }}
-          SEARCH_CONTEXT_SIZE: ${{ vars.SEARCH_CONTEXT_SIZE }}
           IMAGE_MODEL: ${{ vars.IMAGE_MODEL }}
           IMAGE_QUALITY: ${{ vars.IMAGE_QUALITY }}
           KEEP_DAYS: ${{ vars.KEEP_DAYS }}
