@@ -1,11 +1,12 @@
 # Daily Image Feed
 
-毎日、「今日は何の日」を日本語のWeb情報から1件選び、その題材に沿った画像をOpenAI APIで生成してRSS配信するためのリポジトリです。
+毎日、Yahoo!きっず「今日は何の日」の当日情報を参照し、その題材に沿った画像をOpenAI APIで生成してRSS配信するためのリポジトリです。
 
 ## 動作
 
 - 毎朝 5:15（日本時間）にGitHub Actionsを実行
-- Web検索は1日1回だけ行い、視覚化しやすい題材を1件選定
+- Yahoo!きっずの構造化データから当日の記念日名と説明を取得
+- 検索用のAI・Web検索APIは使用せず、OpenAI APIは画像生成だけに使用
 - 画像生成プロンプトに最終表示サイズ `1080×480` と指定
 - APIでは横長画像を生成後、中央基準で正確に `1080×480` へ切り抜き・縮小
 - 画像、選定根拠、RSSをリポジトリへ自動コミット
@@ -28,13 +29,10 @@ OPENAI_API_KEY
 
 ## 消費量を抑える設定
 
-初期値は調査1回・短い応答・中品質画像です。必要な場合だけ、ActionsのRepository Variablesで変更できます。
+初期値は画像1枚・中品質です。必要な場合だけ、ActionsのRepository Variablesで変更できます。
 
 | Variable | 初期値 | 用途 |
 |---|---|---|
-| `RESEARCH_MODEL` | `gpt-5-mini` | 「今日は何の日」の調査モデル |
-| `RESEARCH_MAX_OUTPUT_TOKENS` | `4000` | 検索・推論を含む調査結果の上限（実使用分だけ課金） |
-| `SEARCH_CONTEXT_SIZE` | `low` | Web検索のコンテキスト量 |
 | `IMAGE_MODEL` | `gpt-image-2.5-sunburst` | 画像生成モデル |
 | `IMAGE_QUALITY` | `medium` | `medium` または `high` など |
 | `KEEP_DAYS` | `30` | 保存日数 |
