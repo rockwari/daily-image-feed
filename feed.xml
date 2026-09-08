@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>今日は何の日 - Daily Image Feed</title>
+    <link>https://github.com/rockwari/daily-image-feed</link>
+    <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
+    <language>ja</language>
+  </channel>
+</rss>
+
