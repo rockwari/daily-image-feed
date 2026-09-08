@@ -33,7 +33,7 @@ OPENAI_API_KEY
 | Variable | 初期値 | 用途 |
 |---|---|---|
 | `RESEARCH_MODEL` | `gpt-5-mini` | 「今日は何の日」の調査モデル |
-| `RESEARCH_MAX_OUTPUT_TOKENS` | `1200` | 検索・推論を含む調査結果の上限（実使用分だけ課金） |
+| `RESEARCH_MAX_OUTPUT_TOKENS` | `4000` | 検索・推論を含む調査結果の上限（実使用分だけ課金） |
 | `SEARCH_CONTEXT_SIZE` | `low` | Web検索のコンテキスト量 |
 | `IMAGE_MODEL` | `gpt-image-2.5-sunburst` | 画像生成モデル |
 | `IMAGE_QUALITY` | `medium` | `medium` または `high` など |
