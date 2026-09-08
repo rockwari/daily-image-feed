@@ -39,8 +39,9 @@ def env_int(name: str, default: int, minimum: int, maximum: int) -> int:
 
 RESEARCH_MODEL = env("RESEARCH_MODEL", "gpt-5-mini")
 RESEARCH_MAX_OUTPUT_TOKENS = env_int(
-    "RESEARCH_MAX_OUTPUT_TOKENS", 1200, 700, 2000
+    "RESEARCH_MAX_OUTPUT_TOKENS", 4000, 1200, 8000
 )
+RESEARCH_REASONING_EFFORT = "low"
 SEARCH_CONTEXT_SIZE = env("SEARCH_CONTEXT_SIZE", "low")
 IMAGE_MODEL = env("IMAGE_MODEL", "gpt-image-2.5-sunburst")
 IMAGE_QUALITY = env("IMAGE_QUALITY", "medium")
@@ -76,6 +77,7 @@ def research_anniversary(client: OpenAI, now: datetime) -> dict[str, str]:
 """.strip()
     response = client.responses.create(
         model=RESEARCH_MODEL,
+        reasoning={"effort": RESEARCH_REASONING_EFFORT},
         tools=[
             {
                 "type": "web_search",
