@@ -1,0 +1,62 @@
+name: Generate daily image
+
+on:
+  schedule:
+    # 20:15 UTC = 翌日 05:15 JST（日本はサマータイムなし）
+    - cron: "15 20 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "同日の画像を作り直す"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-image-generation
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Generate image and RSS
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FORCE: ${{ github.event.inputs.force || 'false' }}
+          RESEARCH_MODEL: ${{ vars.RESEARCH_MODEL }}
+          RESEARCH_MAX_OUTPUT_TOKENS: ${{ vars.RESEARCH_MAX_OUTPUT_TOKENS }}
+          SEARCH_CONTEXT_SIZE: ${{ vars.SEARCH_CONTEXT_SIZE }}
+          IMAGE_MODEL: ${{ vars.IMAGE_MODEL }}
+          IMAGE_QUALITY: ${{ vars.IMAGE_QUALITY }}
+          KEEP_DAYS: ${{ vars.KEEP_DAYS }}
+        run: python scripts/generate_daily.py
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images metadata feed.xml latest.json
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          generation_date=$(TZ=Asia/Tokyo date +%F)
+          git commit -m "Generate daily image for ${generation_date}"
+          git push
