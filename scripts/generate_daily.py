@@ -5,13 +5,12 @@ import html
 import io
 import json
 import os
-import re
 import shutil
 import urllib.request
 from datetime import datetime, timedelta
 from email.utils import format_datetime
+from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
 from openai import OpenAI
@@ -23,6 +22,8 @@ IMAGES_DIR = ROOT / "images"
 METADATA_DIR = ROOT / "metadata"
 JST = ZoneInfo("Asia/Tokyo")
 TARGET_SIZE = (1080, 480)
+TODAY_SOURCE_URL = "https://kids.yahoo.co.jp/today"
+MAX_SOURCE_BYTES = 2_000_000
 
 
 def env(name: str, default: str) -> str:
@@ -37,89 +38,90 @@ def env_int(name: str, default: int, minimum: int, maximum: int) -> int:
     return max(minimum, min(maximum, value))
 
 
-RESEARCH_MODEL = env("RESEARCH_MODEL", "gpt-5-mini")
-RESEARCH_MAX_OUTPUT_TOKENS = env_int(
-    "RESEARCH_MAX_OUTPUT_TOKENS", 4000, 1200, 8000
-)
-RESEARCH_REASONING_EFFORT = "low"
-SEARCH_CONTEXT_SIZE = env("SEARCH_CONTEXT_SIZE", "low")
 IMAGE_MODEL = env("IMAGE_MODEL", "gpt-image-2.5-sunburst")
 IMAGE_QUALITY = env("IMAGE_QUALITY", "medium")
 KEEP_DAYS = env_int("KEEP_DAYS", 30, 1, 365)
 FORCE = env("FORCE", "false").lower() in {"1", "true", "yes"}
 
 
-def extract_json(text: str) -> dict[str, str]:
-    cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", text.strip())
-    start = cleaned.find("{")
-    end = cleaned.rfind("}")
-    if start < 0 or end <= start:
-        raise ValueError("調査結果からJSONを読み取れませんでした")
-    data = json.loads(cleaned[start : end + 1])
-    required = ("title", "summary", "source_url", "image_subject")
-    for key in required:
-        if not isinstance(data.get(key), str) or not data[key].strip():
-            raise ValueError(f"調査結果の {key} が空です")
-        data[key] = data[key].strip()
-    parsed = urlparse(data["source_url"])
-    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
-        raise ValueError("source_urlが有効なURLではありません")
-    return data
+class NextDataParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self._inside_next_data = False
+        self._chunks: list[str] = []
+
+    def handle_starttag(
+        self, tag: str, attrs: list[tuple[str, str | None]]
+    ) -> None:
+        attributes = dict(attrs)
+        if tag == "script" and attributes.get("id") == "__NEXT_DATA__":
+            self._inside_next_data = True
+
+    def handle_data(self, data: str) -> None:
+        if self._inside_next_data:
+            self._chunks.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "script" and self._inside_next_data:
+            self._inside_next_data = False
+
+    @property
+    def next_data(self) -> str:
+        return "".join(self._chunks).strip()
 
 
-def research_anniversary(client: OpenAI, now: datetime) -> dict[str, str]:
-    date_text = now.strftime("%Y年%m月%d日")
-    prompt = f"""
-今日は日本時間の{date_text}です。日本語のWebを検索して、この日の「今日は何の日」に該当する記念日・文化・科学・季節の話題を確認してください。
-信頼できる公的機関、団体、博物館、報道機関などを優先し、由来を確認できるものから、画像にしやすく明るい題材を1件だけ選んでください。災害、事故、戦争、人物の死去を中心にした題材は避けてください。
-出力は次のキーだけを持つ短いJSONオブジェクトにしてください。Markdownや説明文は不要です。
-{{"title":"画像内にそのまま載せる短い日本語名","summary":"由来を80文字以内で要約","source_url":"根拠としたページのURL","image_subject":"画像に描く具体的な題材を日本語で簡潔に"}}
-""".strip()
-    response = client.responses.create(
-        model=RESEARCH_MODEL,
-        reasoning={"effort": RESEARCH_REASONING_EFFORT},
-        tools=[
-            {
-                "type": "web_search",
-                "search_context_size": SEARCH_CONTEXT_SIZE,
-            }
-        ],
-        input=prompt,
-        max_output_tokens=RESEARCH_MAX_OUTPUT_TOKENS,
-        text={
-            "format": {
-                "type": "json_schema",
-                "name": "daily_anniversary",
-                "strict": True,
-                "schema": {
-                    "type": "object",
-                    "properties": {
-                        "title": {"type": "string"},
-                        "summary": {"type": "string"},
-                        "source_url": {"type": "string"},
-                        "image_subject": {"type": "string"},
-                    },
-                    "required": [
-                        "title",
-                        "summary",
-                        "source_url",
-                        "image_subject",
-                    ],
-                    "additionalProperties": False,
-                },
-            }
+def fetch_anniversary(now: datetime) -> dict[str, str]:
+    request = urllib.request.Request(
+        TODAY_SOURCE_URL,
+        headers={
+            "User-Agent": (
+                "daily-image-feed/1.0 "
+                "(+https://github.com/rockwari/daily-image-feed)"
+            ),
+            "Accept": "text/html,application/xhtml+xml",
+            "Accept-Language": "ja-JP,ja;q=0.9",
         },
     )
-    if response.status != "completed":
-        details = getattr(response, "incomplete_details", None)
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            raw = response.read(MAX_SOURCE_BYTES + 1)
+            charset = response.headers.get_content_charset() or "utf-8"
+    except OSError as exc:
+        raise RuntimeError(f"Yahoo!きっずの取得に失敗しました: {exc}") from exc
+
+    if len(raw) > MAX_SOURCE_BYTES:
+        raise RuntimeError("Yahoo!きっずの応答サイズが上限を超えました")
+
+    parser = NextDataParser()
+    parser.feed(raw.decode(charset, errors="strict"))
+    if not parser.next_data:
+        raise RuntimeError("Yahoo!きっずの構造化データが見つかりません")
+
+    try:
+        page_data = json.loads(parser.next_data)
+        results = page_data["props"]["pageProps"]["todayResponse"]["results"]
+        source_date = str(results["date"])
+        memory = results["memories"][0]
+        title = memory["title"].strip()
+        description = memory["description"].strip()
+    except (KeyError, IndexError, TypeError, AttributeError, json.JSONDecodeError) as exc:
+        raise RuntimeError("Yahoo!きっずの記念日情報を解析できませんでした") from exc
+
+    expected_date = now.strftime("%m%d")
+    if source_date != expected_date:
         raise RuntimeError(
-            f"調査APIが完了しませんでした: status={response.status}, "
-            f"details={details}"
+            "Yahoo!きっずの日付が日本時間の当日と一致しません: "
+            f"expected={expected_date}, actual={source_date}"
         )
-    if not response.output_text.strip():
-        usage = getattr(response, "usage", None)
-        raise RuntimeError(f"調査APIの本文が空です: usage={usage}")
-    return extract_json(response.output_text)
+    if not title or not description:
+        raise RuntimeError("Yahoo!きっずの記念日名または説明が空です")
+
+    return {
+        "title": title,
+        "summary": description,
+        "source_url": TODAY_SOURCE_URL,
+        "image_subject": f"{title}を象徴する情景。由来は「{description}」",
+    }
 
 
 def make_image_prompt(item: dict[str, str], now: datetime) -> str:
@@ -244,9 +246,9 @@ def main() -> None:
         print(f"{date_text} は生成済みです。APIは呼び出しません。")
         return
 
-    client = OpenAI()
-    item = research_anniversary(client, now)
+    item = fetch_anniversary(now)
     prompt = make_image_prompt(item, now)
+    client = OpenAI()
 
     temporary_image = IMAGES_DIR / f".{date_text}.tmp.jpg"
     try:
@@ -268,7 +270,7 @@ def main() -> None:
         "image_path": image_relative,
         "image_url": image_url,
         "generated_at": now.isoformat(),
-        "research_model": RESEARCH_MODEL,
+        "topic_source": TODAY_SOURCE_URL,
         "image_model": IMAGE_MODEL,
         "image_quality": IMAGE_QUALITY,
         "final_size": "1080x480",
