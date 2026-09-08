@@ -39,7 +39,7 @@ def env_int(name: str, default: int, minimum: int, maximum: int) -> int:
 
 RESEARCH_MODEL = env("RESEARCH_MODEL", "gpt-5-mini")
 RESEARCH_MAX_OUTPUT_TOKENS = env_int(
-    "RESEARCH_MAX_OUTPUT_TOKENS", 450, 250, 1200
+    "RESEARCH_MAX_OUTPUT_TOKENS", 1200, 700, 2000
 )
 SEARCH_CONTEXT_SIZE = env("SEARCH_CONTEXT_SIZE", "low")
 IMAGE_MODEL = env("IMAGE_MODEL", "gpt-image-2.5-sunburst")
@@ -84,7 +84,39 @@ def research_anniversary(client: OpenAI, now: datetime) -> dict[str, str]:
         ],
         input=prompt,
         max_output_tokens=RESEARCH_MAX_OUTPUT_TOKENS,
+        text={
+            "format": {
+                "type": "json_schema",
+                "name": "daily_anniversary",
+                "strict": True,
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "title": {"type": "string"},
+                        "summary": {"type": "string"},
+                        "source_url": {"type": "string"},
+                        "image_subject": {"type": "string"},
+                    },
+                    "required": [
+                        "title",
+                        "summary",
+                        "source_url",
+                        "image_subject",
+                    ],
+                    "additionalProperties": False,
+                },
+            }
+        },
     )
+    if response.status != "completed":
+        details = getattr(response, "incomplete_details", None)
+        raise RuntimeError(
+            f"調査APIが完了しませんでした: status={response.status}, "
+            f"details={details}"
+        )
+    if not response.output_text.strip():
+        usage = getattr(response, "usage", None)
+        raise RuntimeError(f"調査APIの本文が空です: usage={usage}")
     return extract_json(response.output_text)
 
 
@@ -253,4 +285,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
