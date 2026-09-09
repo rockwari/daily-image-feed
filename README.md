@@ -29,7 +29,7 @@ OPENAI_API_KEY
 
 ## 消費量を抑える設定
 
-初期値は画像1枚・中品質です。必要な場合だけ、ActionsのRepository Variablesで変更できます。
+画像生成モデルはActions上で `gpt-image-2.5-flare` に固定しています。品質と保存日数は、必要な場合だけRepository Variablesで変更できます。
 
 | Variable | 初期値 | 用途 |
 |---|---|---|
