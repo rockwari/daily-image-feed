@@ -33,7 +33,7 @@ OPENAI_API_KEY
 
 | Variable | 初期値 | 用途 |
 |---|---|---|
-| `IMAGE_MODEL` | `gpt-image-2.5-sunburst` | 画像生成モデル |
+| `IMAGE_MODEL` | `gpt-image-2.5-flare` | 画像生成モデル（現在はワークフローでFlareに固定） |
 | `IMAGE_QUALITY` | `medium` | `medium` または `high` など |
 | `KEEP_DAYS` | `30` | 保存日数 |
 
