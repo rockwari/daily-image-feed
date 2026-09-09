@@ -38,7 +38,7 @@ def env_int(name: str, default: int, minimum: int, maximum: int) -> int:
     return max(minimum, min(maximum, value))
 
 
-IMAGE_MODEL = env("IMAGE_MODEL", "gpt-image-2.5-sunburst")
+IMAGE_MODEL = env("IMAGE_MODEL", "gpt-image-2.5-flare")
 IMAGE_QUALITY = env("IMAGE_QUALITY", "medium")
 KEEP_DAYS = env_int("KEEP_DAYS", 30, 1, 365)
 FORCE = env("FORCE", "false").lower() in {"1", "true", "yes"}
