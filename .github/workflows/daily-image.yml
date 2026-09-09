@@ -40,7 +40,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FORCE: ${{ github.event.inputs.force || 'false' }}
-          IMAGE_MODEL: ${{ vars.IMAGE_MODEL }}
+          IMAGE_MODEL: gpt-image-2.5-flare
           IMAGE_QUALITY: ${{ vars.IMAGE_QUALITY }}
           KEEP_DAYS: ${{ vars.KEEP_DAYS }}
         run: python scripts/generate_daily.py
