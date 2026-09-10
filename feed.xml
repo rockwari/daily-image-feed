@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 10 Sep 2026 07:33:53 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 07:35:54 +0900</lastBuildDate>
+    <item>
+      <title>警察相談の日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-09-11</guid>
+      <pubDate>Fri, 11 Sep 2026 07:35:54 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-11.jpg&quot; alt=&quot;警察相談の日&quot; /&gt;&lt;p&gt;1999（平成11）年、警察への電話相談番号「＃9110」にちなんで、警察庁が制定。緊急の事件・事故以外の相談を受け付けている。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-11.jpg" length="157014" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-11.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>下水道の日</title>
       <link>https://kids.yahoo.co.jp/today</link>
