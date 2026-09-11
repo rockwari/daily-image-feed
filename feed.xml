@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 11 Sep 2026 07:35:54 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 07:36:18 +0900</lastBuildDate>
+    <item>
+      <title>宇宙の日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-09-12</guid>
+      <pubDate>Sat, 12 Sep 2026 07:36:18 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-12.jpg&quot; alt=&quot;宇宙の日&quot; /&gt;&lt;p&gt;1992（平成4）年、毛利衛宇宙飛行士がアメリカのスペースシャトルで宇宙へ飛び立ったのを記念して制定。宇宙航空研究開発機構（JAXA）などが施設の一般公開をしたりしている。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-12.jpg" length="183238" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-12.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>警察相談の日</title>
       <link>https://kids.yahoo.co.jp/today</link>
