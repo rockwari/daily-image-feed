@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Sep 2026 07:36:18 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 07:18:09 +0900</lastBuildDate>
+    <item>
+      <title>世界の法の日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-09-13</guid>
+      <pubDate>Sun, 13 Sep 2026 07:18:09 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-13.jpg&quot; alt=&quot;世界の法の日&quot; /&gt;&lt;p&gt;1965（昭和40）年、アメリカのワシントンで開かれた「法による世界平和についての国際会議」で、国際間に法の支配を徹底させることで世界平和を確立しようという宣言が採択されたことを記念したもの。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-13.jpg" length="184684" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-13.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>宇宙の日</title>
       <link>https://kids.yahoo.co.jp/today</link>
