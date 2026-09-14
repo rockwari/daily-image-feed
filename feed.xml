@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 14 Sep 2026 07:24:54 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 08:08:08 +0900</lastBuildDate>
+    <item>
+      <title>スカウトの日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-09-15</guid>
+      <pubDate>Tue, 15 Sep 2026 08:08:08 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-15.jpg&quot; alt=&quot;スカウトの日&quot; /&gt;&lt;p&gt;1974年に5月5日を含む日を「スカウト週間」として制定。1990年に「スカウト奉仕の日」に改称して9月15日に変更し、1991年に「スカウトの日」に再度改称。ボーイスカウトではこの日から新しい年度。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-15.jpg" length="149451" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-15.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>メンズバレンタインデー</title>
       <link>https://kids.yahoo.co.jp/today</link>
