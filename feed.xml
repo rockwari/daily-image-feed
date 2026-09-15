@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 15 Sep 2026 08:08:08 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 07:54:03 +0900</lastBuildDate>
+    <item>
+      <title>国際オゾン層保護デー</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-09-16</guid>
+      <pubDate>Wed, 16 Sep 2026 07:54:03 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-16.jpg&quot; alt=&quot;国際オゾン層保護デー&quot; /&gt;&lt;p&gt;地球を太陽光線の有害な紫外線から守っているオゾン層の破壊をくい止め、オゾン層を保護するために国連が制定した国際デー。1994（平成6）年の国連総会で決議され採択された。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-16.jpg" length="177672" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-16.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>スカウトの日</title>
       <link>https://kids.yahoo.co.jp/today</link>
