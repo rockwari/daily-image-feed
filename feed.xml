@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 16 Sep 2026 07:54:03 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 07:56:33 +0900</lastBuildDate>
+    <item>
+      <title>モノレール開業記念日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-09-17</guid>
+      <pubDate>Thu, 17 Sep 2026 07:56:33 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-17.jpg&quot; alt=&quot;モノレール開業記念日&quot; /&gt;&lt;p&gt;1964（昭和39）年、浜松町－羽田空港間に東京モノレールが開業した。日本初の旅客用モノレール。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-17.jpg" length="183422" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-17.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>国際オゾン層保護デー</title>
       <link>https://kids.yahoo.co.jp/today</link>
