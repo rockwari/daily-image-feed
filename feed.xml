@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 18 Sep 2026 07:51:29 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 07:34:49 +0900</lastBuildDate>
+    <item>
+      <title>苗字の日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-09-19</guid>
+      <pubDate>Sat, 19 Sep 2026 07:34:49 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-19.jpg&quot; alt=&quot;苗字の日&quot; /&gt;&lt;p&gt;1870（明治3）年、太政官布告により平民も苗字をつけることが許された。それまでは武士の特権だった苗字が戸籍整理で必要となったため。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-19.jpg" length="188868" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-19.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>かいわれ大根の日</title>
       <link>https://kids.yahoo.co.jp/today</link>
