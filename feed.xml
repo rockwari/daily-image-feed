@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 19 Sep 2026 07:34:49 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 07:19:48 +0900</lastBuildDate>
+    <item>
+      <title>空の日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-09-20</guid>
+      <pubDate>Sun, 20 Sep 2026 07:19:48 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-20.jpg&quot; alt=&quot;空の日&quot; /&gt;&lt;p&gt;1911年、山田猪三郎が開発した山田式飛行船が、滞空時間1時間の東京上空一周飛行に成功したことから、1940年、「航空の日」として制定。1992年、「空の日」と改称。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-20.jpg" length="156370" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-20.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>苗字の日</title>
       <link>https://kids.yahoo.co.jp/today</link>
