@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 20 Sep 2026 07:19:48 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 07:26:34 +0900</lastBuildDate>
+    <item>
+      <title>敬老の日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-09-21</guid>
+      <pubDate>Mon, 21 Sep 2026 07:26:34 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-21.jpg&quot; alt=&quot;敬老の日&quot; /&gt;&lt;p&gt;1966（昭和41）年、国民の祝日として制定。多年にわたり社会に尽くしてきた老人を敬愛し、長寿を祝う日。もとは9月15日だったが、祝日法改正で、2003（平成15）年から9月の第3月曜日となった。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-21.jpg" length="165342" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-21.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>空の日</title>
       <link>https://kids.yahoo.co.jp/today</link>
