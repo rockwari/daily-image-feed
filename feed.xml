@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 24 Sep 2026 07:57:13 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 08:12:44 +0900</lastBuildDate>
+    <item>
+      <title>10円カレーの日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-09-25</guid>
+      <pubDate>Fri, 25 Sep 2026 08:12:44 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-25.jpg&quot; alt=&quot;10円カレーの日&quot; /&gt;&lt;p&gt;東京・日比谷公園にあるレストラン「松本楼」が制定。1971（昭和46）年に焼失し、翌々年に再建、新装開店したのを記念して、この日はカレーを10円で提供。売上はすべてチャリティーとして寄付している。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-25.jpg" length="191980" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-25.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>歯科技工士記念日</title>
       <link>https://kids.yahoo.co.jp/today</link>
