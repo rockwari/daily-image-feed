@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 27 Sep 2026 07:51:35 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 08:03:34 +0900</lastBuildDate>
+    <item>
+      <title>パソコンの日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-09-28</guid>
+      <pubDate>Mon, 28 Sep 2026 08:03:34 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-28.jpg&quot; alt=&quot;パソコンの日&quot; /&gt;&lt;p&gt;1979（昭和54）年、日本電気（NEC）がパーソナルコンピューター「PC－8000」シリーズを発売した。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-28.jpg" length="144339" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-09-28.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>世界観光の日</title>
       <link>https://kids.yahoo.co.jp/today</link>
