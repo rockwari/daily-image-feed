@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 01 Oct 2026 08:49:47 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 08:52:55 +0900</lastBuildDate>
+    <item>
+      <title>豆腐の日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-10-02</guid>
+      <pubDate>Fri, 02 Oct 2026 08:52:55 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-02.jpg&quot; alt=&quot;豆腐の日&quot; /&gt;&lt;p&gt;1993（平成5）年、「とう（10）ふ（2）」の語呂合わせから、日本豆腐協会が制定。栄養豊富な豆腐をPRするのが目的。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-02.jpg" length="146966" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-02.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>コーヒーの日</title>
       <link>https://kids.yahoo.co.jp/today</link>
