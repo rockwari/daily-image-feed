@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 02 Oct 2026 08:52:55 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 08:46:42 +0900</lastBuildDate>
+    <item>
+      <title>登山の日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-10-03</guid>
+      <pubDate>Sat, 03 Oct 2026 08:46:42 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-03.jpg&quot; alt=&quot;登山の日&quot; /&gt;&lt;p&gt;「と（10）ざん（3）」の語呂合わせから、日本アルパインガイド協会が制定。山に登ることで雄大な大自然に触れ、その素晴らしさを知って、自然を尊び、愛し、自然からの恩恵に感謝する日。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-03.jpg" length="161632" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-03.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>豆腐の日</title>
       <link>https://kids.yahoo.co.jp/today</link>
