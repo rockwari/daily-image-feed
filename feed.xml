@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 05 Oct 2026 08:10:53 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 10:18:24 +0900</lastBuildDate>
+    <item>
+      <title>国際協力の日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-10-06</guid>
+      <pubDate>Tue, 06 Oct 2026 10:18:24 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-06.jpg&quot; alt=&quot;国際協力の日&quot; /&gt;&lt;p&gt;1954（昭和29）年、国際協力の第一歩として、日本が途上国への技術協力のための地域協力機構「コロンボ計画」に加盟した日にちなんで、1987（昭和62）年に外務省と国際協力事業団（JICA）が制定。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-06.jpg" length="186597" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-06.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>時刻表記念日</title>
       <link>https://kids.yahoo.co.jp/today</link>
