@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 07 Oct 2026 08:48:44 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 09:12:24 +0900</lastBuildDate>
+    <item>
+      <title>骨と関節の日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-10-08</guid>
+      <pubDate>Thu, 08 Oct 2026 09:12:24 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-08.jpg&quot; alt=&quot;骨と関節の日&quot; /&gt;&lt;p&gt;「骨」の「ホ」の字が「十」と「八」に分けることができ、「体育の日」にも近いため、骨と関節の健康に気をつけようと日本整形外科学会が制定。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-08.jpg" length="150864" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-08.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>ミステリー記念日</title>
       <link>https://kids.yahoo.co.jp/today</link>
