@@ -5,7 +5,16 @@
     <link>https://github.com/rockwari/daily-image-feed</link>
     <description>毎日1枚、「今日は何の日」を題材にした画像を配信します。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 08 Oct 2026 09:12:24 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 09:23:25 +0900</lastBuildDate>
+    <item>
+      <title>塾の日</title>
+      <link>https://kids.yahoo.co.jp/today</link>
+      <guid isPermaLink="false">daily-image-2026-10-09</guid>
+      <pubDate>Fri, 09 Oct 2026 09:23:25 +0900</pubDate>
+      <description>&lt;img src=&quot;https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-09.jpg&quot; alt=&quot;塾の日&quot; /&gt;&lt;p&gt;「じゅ（10）く（9）」の語呂合わせから、学習塾の質的向上を図り、学習塾に対する正しい認識と信頼を獲得するとともに、学習塾の健全な発展を願い、全国学習塾協会が制定。&lt;/p&gt;</description>
+      <enclosure url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-09.jpg" length="135789" type="image/jpeg" />
+      <media:content url="https://raw.githubusercontent.com/rockwari/daily-image-feed/main/images/2026-10-09.jpg" type="image/jpeg" medium="image" width="1080" height="480" />
+    </item>
     <item>
       <title>骨と関節の日</title>
       <link>https://kids.yahoo.co.jp/today</link>
